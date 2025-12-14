@@ -4,11 +4,10 @@ import ToDoList from './components/ToDoList';
 import './App.css';
 
 function App() {
-  // Requirement: Use state to manage the list of to-do items
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
-  // Requirement: Event handling for adding a new to-do item
+  // 1. Add Item
   const addTodo = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -23,21 +22,38 @@ function App() {
     setInput('');
   };
 
-  // Requirement: Event handling for deleting a to-do item
+  // 2. Delete Item
   const deleteTodo = (id) => {
     const newTodos = todos.filter(todo => todo.id !== id);
     setTodos(newTodos);
   };
 
-  // Placeholders for next phase (to prevent errors in ToDoList)
-  const toggleComplete = (id) => {}; 
-  const editTodo = (id, text) => {};
+  // 3. Mark as Completed (Requirement: Event handling for completion)
+  const toggleComplete = (id) => {
+    const newTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
+
+  // 4. Edit Item (Requirement: Event handling for editing)
+  const editTodo = (id, newText) => {
+    const newTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, text: newText };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
 
   return (
     <div className="app-container">
       <Header />
       
-      {/* Form to add tasks */}
       <form onSubmit={addTodo} className="input-form">
         <input 
           type="text" 
@@ -48,7 +64,6 @@ function App() {
         <button type="submit" className="add-btn">Add</button>
       </form>
 
-      {/* Requirement: Pass down state and functions as props */}
       <ToDoList 
         todos={todos} 
         deleteTodo={deleteTodo} 
