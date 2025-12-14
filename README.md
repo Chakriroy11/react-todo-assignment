@@ -37,7 +37,7 @@ Follow these steps to set up and run the project locally:
 
 1.  **Clone the repository** (or unzip the project folder):
     ```bash
-    git clone <YOUR_GITHUB_REPO_LINK>
+    git clone "https://github.com/Chakriroy11/react-todo-assignment"
     ```
 
 2.  **Navigate to the project directory:**
