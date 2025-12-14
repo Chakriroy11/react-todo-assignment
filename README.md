@@ -1,16 +1,59 @@
-# React + Vite
+# ToDo App — Module 3 (Vite + React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Student:** Chandaka Chakri  
+**Project:** Simple To-Do List application (Vite + React)  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Summary
+This is a modern, responsive To-Do List application built with **Vite** and **React**. It fulfills the requirements for the Module 3 React Assignment by demonstrating the use of functional components, state management, props, and event handling.
 
-## React Compiler
+### Key Features
+* **Tech Stack:** Built using **Vite** for fast development and **React** (Functional Components).
+* **Components:** Organized structure including `App`, `Header`, `ToDoList`, and `ToDoItem`.
+* **CRUD Operations:**
+    * **Add:** Users can add new tasks.
+    * **List:** Renders tasks dynamically using `.map()` with unique `key` props.
+    * **Edit:** Users can edit existing tasks inline.
+    * **Delete:** Users can remove tasks.
+    * **Toggle:** Users can mark tasks as completed.
+* **State Management:** State is managed in the `App` component and passed down via props.
+* **Styling:** Custom CSS located in `src/App.css` (No external UI libraries used).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Project Structure
+The project adheres to the following component hierarchy:
+* `App.jsx`: Main container and state manager.
+* `Header.jsx`: Displays the application title.
+* `ToDoList.jsx`: Iterates through the todos state to render the list.
+* `ToDoItem.jsx`: Renders individual tasks and handles edit/delete/toggle actions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## How to Run the Application
+
+Follow these steps to set up and run the project locally:
+
+1.  **Clone the repository** (or unzip the project folder):
+    ```bash
+    git clone <YOUR_GITHUB_REPO_LINK>
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd todo-app
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+5.  **Open in Browser:**
+    Click the link shown in your terminal (usually `http://localhost:5173`) to view the application.
